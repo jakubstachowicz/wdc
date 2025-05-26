@@ -108,7 +108,7 @@ Po wygenerowaniu kluczy należy je zainstalować -- zarówno po stronie klienta,
 
 \subsubsection{Klient i serwer SSH Linux}
 Aby klient logujący się z Linuksa mógł użyć swojego klucza, klucz publiczny klienta należy dodać do pliku
-\verb|~/.ssh/authorized_keys| konta docelowego na serwerze. Najprościej to zrobić poleceniem \verb|sshcopy-id| -- narzędzie automatycznie kopiuje nasz klucz publiczny do odpowiedniego pliku na serwerze. Przykład: \verb|ssh-copy-id user@serwer|.
+\verb|~/.ssh/authorized_keys| konta docelowego na serwerze. Najprościej to zrobić poleceniem \verb|ssh-copy-id| -- narzędzie automatycznie kopiuje nasz klucz publiczny do odpowiedniego pliku na serwerze. Przykład: \verb|ssh-copy-id user@serwer|.
 
 \noindent
 \includegraphics[width=\linewidth]{ssh_copy_id.png}
@@ -161,7 +161,7 @@ W razie potrzeby możemy też użyć Pageanta -- agenta kluczy PuTTY -- i dodać
 Najpopularniejszym zastosowaniem protokołu SSH jest zdalny terminal. SSH umożliwia to, co umożliwia ,,zwykły'' terminal używany lokalnie, lecz przez sieć. Dzięki zdalnemu połączeniu nie trzeba znajdować się fizycznie przy serwerze, żeby sprawdzić np. obecność plików konfiguracyjnych czy status danej usługi.
 
 \noindent
-\includegraphics[width=\linewidth]{putty_login-key.png}
+\includegraphics[width=\linewidth]{putty_login-example.png}
 
 \subsection{Przesył plików}
 Drugim popularnym zastosowaniem jest transfer plików. Istnieje kilka protokołów tego transferu, opartych na protokole SSH.
@@ -188,7 +188,10 @@ Ta komenda przeniesie plik na serwer bez potrzeby podawania hasła (chyba że na
 \subsubsection{WinSCP}
 WinSCP to graficzny klient SFTP/SCP na Windows. Po wybraniu protokołu SFTP wpisujemy dane sesji (nazwa hosta, port, użytkownik). W Advanced (zaawansowanych ustawieniach) przechodzimy do SSH → Authentication i wskazujemy ścieżkę do pliku klucza prywatnego (PuTTY \verb|.ppk|)\cite{superuser}. WinSCP automatycznie użyje tego klucza przy nawiązywaniu połączenia. 
 
-Po udanym zalogowaniu widzimy interfejs drag\&drop dwóch katalogów (lokalnego i zdalnego) – możemy wtedy przeciągać pliki albo używać komend Get i Put jak w SFTP. Dzięki zastosowaniu klucza prywatnego transfer plików przebiega bez pytania o hasło. 
+Po udanym zalogowaniu widzimy interfejs drag\&drop dwóch katalogów (lokalnego i zdalnego) – możemy wtedy przeciągać pliki albo używać komend Get i Put jak w SFTP. Dzięki zastosowaniu klucza prywatnego transfer plików przebiega bez pytania o hasło.
+
+\noindent
+\includegraphics[width=\linewidth]{winscp-copy.png}
 
 \end{multicols}
 
